@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+
+    <script src="../echarts.js"></script>
+    <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var option;
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'category',
+                data: ['基里巴斯', '所罗门群岛', '格陵兰', '缅甸', '尼泊尔', '蒙古', '博茨瓦纳', '巴基斯坦', '中国', '老挝']
+            },
+            series: [
+                {
+                    name: '数量',
+                    type: 'bar',
+                    data: [387.47, 347.12, 283.74, 253.68, 215.25, 211.18, 209.39, 202.22, 200.86, 195.31]
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+    </script>
+</body>
+</html>
