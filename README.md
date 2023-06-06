@@ -1,2 +1,2 @@
 # anous341256.github.io
-myweb
+访问/web/index.html
