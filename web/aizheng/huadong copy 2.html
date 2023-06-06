@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Slider Paginations with Iframe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .content {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .slider-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Slider and Iframe Group 1 -->
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> Description for Group 1</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe1"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="3" value="1" class="slider" id="pageSlider1">
+                    <p id="pageNumber1" class="text-muted">Page 1</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider and Iframe Group 2 -->
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> Description for Group 2</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe2"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="3" value="1" class="slider" id="pageSlider2">
+                    <p id="pageNumber2" class="text-muted">Page 2</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more groups if you need -->
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var pages1 = [
+                './map1990.html',
+                './map1991.html',
+                './map1992.html'
+                // Add more URLs for the first group if you need
+            ];
+            $('#iframe1').attr('src', pages1[0]);
+            $('#pageSlider1').on('input change', function() {
+                $('#iframe1').attr('src', pages1[this.value - 1]);
+                $('#pageNumber1').text('Page ' + this.value);
+            });
+
+            var pages2 = [
+                 './map1990.html',
+                './map1991.html',
+                './map1992.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe2').attr('src', pages2[0]);
+            $('#pageSlider2').on('input change', function() {
+                $('#iframe2').attr('src', pages2[this.value - 1]);
+                $('#pageNumber2').text('Page ' + this.value);
+            });
+
+            // Add more JavaScript code if you have more groups
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>Countribution</title>
+    <style>
+        .background {
+            background-image: url("./bk2.jpg");
+            background-repeat: repeat-y; /* 图像在纵向上重复 */
+            background-position: center center; /* 图像在元素中居中对齐 */
+            }
+        #slider-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #slider {
+            width: 400px; /* 或者使用百分比，例如: width: 50%; */
+        }
+        #slider2 {
+            width: 400px; /* 或者使用百分比，例如: width: 50%; */
+        }
+        #iframe {
+            background-color: white; /* iframe的背景设置为白色 */
+            
+        }
+        .container {
+            display: flex;
+        }
+        .content {
+        display: flex;
+        }
+        .text-box {
+            width: 60%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+        }
+        .image-box {
+            width: 40%;
+            box-sizing: border-box;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">全球人口死亡原因统计</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./children copy.html">Features</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 创建一个iframe -->
+    <iframe id="iframe" style="width: 100%;height:400px;"></iframe>
+
+    <!-- 创建滑动条和显示页码的容器 -->
+    <div id="slider-wrapper">
+        <!-- 创建一个滑动条，范围是1990-2019，初始值是1990 -->
+        <input type="range" min="1990" max="2019" value="1990" id="slider">
+
+        <!-- 创建一个span来显示当前的页码 -->
+        <span id="currentPage"></span>
+    </div>
+
+
+    <script type="text/javascript">
+        // 获取滑动条、iframe和span的引用
+        var slider = document.getElementById('slider');
+        var iframe = document.getElementById('iframe');
+        var currentPage = document.getElementById('currentPage');
+
+        // 添加一个事件监听器，当滑动条的值改变时，更新iframe的src和页码
+        slider.addEventListener('input', function() {
+            var year = slider.value;
+            iframe.src = './ertong/child' + year +'.html';
+            currentPage.textContent = 'Current Page: ' + year;
+        });
+
+        // 初始化iframe的src和页码
+        iframe.src = './ertong/child' + slider.value +".html";
+        currentPage.textContent = 'Current Page: ' + slider.value;
+    </script>
+
+    <div class="content">
+        <div class="text-box">
+            <p>尽管过去几十年来医疗科技和卫生条件有了显著改善，但仍有大量儿童因各种原因而失去了宝贵的生命。我们的网页旨在探索并深入了解全球儿童死亡的主要原因，以揭示这一问题的规模和复杂性。</p>
+            <p>通过收集和分析来自1990年至2019年的全球数据，我们提供了关于儿童死亡原因的详尽信息。我们探讨了包括疾病、营养不良、感染、外伤等各种原因在内的数据，并提供了可视化和图表，以便更加清晰地呈现和理解这些问题。</p>
+            <p>通过深入了解儿童死亡原因，我们希望唤起人们对这一全球挑战的关注，并为采取有针对性的措施改善儿童健康做出贡献。我们相信，通过共同努力，我们可以为全球儿童的福祉和健康状况做出实质性的改变。</p>
+        </div>
+        <div class="image-box">
+            <img src="./childpic1.jpg" alt="An Image">
+        </div>
+    </div>
+
+
+                <!-- 创建第二个iframe -->
+                <iframe id="iframe2" style="width: 100%;height:400px;background-color: white;"></iframe> <!-- 这是新加的 -->
+
+                <!-- 创建第二个滑动条和显示页码的容器 -->
+                <div id="slider-wrapper2" >
+                    <!-- 创建一个滑动条，范围是1990-2019，初始值是1990 -->
+                    <input type="range" min="1990" max="2019" value="1990" id="slider2">
+
+                    <!-- 创建一个span来显示当前的页码 -->
+                    <span id="currentPage2"></span>
+                </div>
+
+
+    <iframe id="iframe2"></iframe>
+
+    <script type="text/javascript">
+        // 获取第二个滑动条、iframe和span的引用
+        var slider2 = document.getElementById('slider2');
+        var iframe2 = document.getElementById('iframe2');
+        var currentPage2 = document.getElementById('currentPage2');
+
+        // 添加一个事件监听器，当滑动条的值改变时，更新iframe的src和页码
+        slider2.addEventListener('input', function() {
+            var year = slider2.value;
+            iframe2.src = './henxiang/hx' + year +'.html';
+            currentPage2.textContent = 'Current Page: ' + year;
+        });
+
+        // 初始化iframe的src和页码
+        iframe2.src = './henxiang/hx' + slider2.value +".html";
+        currentPage2.textContent = 'Current Page: ' + slider2.value;
+    </script>
+
+    <div class="content">
+        <div class="text-box">
+            <p>吸烟是一种全球性的公共卫生问题，对个人健康和社会福祉产生严重影响。我们的网页旨在揭示吸烟与死亡之间的紧密联系，并通过呈现数据和统计信息，帮助人们更好地认识和理解这个问题的严重性。</p>
+            <p>通过收集并分析1990年至2019年的全球数据，我们整理了因吸烟导致死亡人数排名前十的国家。这些数据包括各个国家的死亡人数和相应的排名。我们通过可视化和图表的方式将这些数据呈现出来，以便更加清晰地展示各国的情况。</p>
+            <p>在我们的网页中，您将了解到这些国家在不同年份间的变化趋势，以及吸烟对这些国家的健康状况和人口影响。我们还提供了解释和背景信息，以帮助您更好地理解吸烟问题的复杂性。</p>
+            <p>我们希望通过深入探讨吸烟死亡数据，唤起公众对吸烟危害的认识，推动全球范围内的吸烟控制措施，并提倡健康的生活方式。只有通过共同努力，我们才能实现一个更健康的世界。</p>
+
+        </div>
+        <div class="image-box">
+            <img src="./smokepic1.jpg" alt="An Image">
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>

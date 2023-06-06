@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="barChart" style="width: 600px; height: 400px;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js"></script>
+<script>
+    var chart = echarts.init(document.getElementById('barChart'));
+
+    var option = {
+        title: {
+            text: 'Bar Chart Example'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6']
+        },
+        yAxis: {},
+        series: [
+            {
+                name: 'Sales',
+                type: 'bar',
+                data: [10, 22, 28, 34, 60, 42]
+            }
+        ]
+    };
+
+    chart.setOption(option);
+</script>
+
+</body>
+</html>

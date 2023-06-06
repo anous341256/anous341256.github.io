@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>内嵌网页示例</title>
+    <style>
+        /* 样式可以根据需要自定义 */
+        .iframe-container {
+            display: flex;
+            flex-direction: column; /* 垂直排列 */
+            align-items: flex-start; /* 左对齐 */
+        }
+
+        .iframe-wrapper {
+            display: flex;
+            width: 100%; /* 宽度占据 100% */
+            margin-bottom: 10px; /* 间距 */
+        }
+
+        /* iframe 样式 */
+        .iframe-item {
+            width: 70%; /* 宽度占据 80% */
+            height: 650px;
+        }
+
+        /* 说明文字样式 */
+        .iframe-description {
+            width: 30%; /* 宽度占据 20% */
+            margin-left: 10px; /* 调整文字与 iframe 之间的距离 */
+        }
+    </style>
+</head>
+<body>
+    <h1>主页</h1>
+    <div class="iframe-container">
+        <div class="iframe-wrapper">
+            <iframe src="./map1990.html" class="iframe-item"></iframe>
+            <span class="iframe-description">这是示例1的说明文字。</span>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="./map1990.html" class="iframe-item"></iframe>
+            <span class="iframe-description">这是示例2的说明文字。</span>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="./map1990.html" class="iframe-item"></iframe>
+            <span class="iframe-description">这是示例3的说明文字。</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>主页</title>
+    <style>
+        /* 样式可以根据需要自定义 */
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>主页</h1>
+    <div id="container"></div>
+
+    <script>
+        var currentPage = 1990;
+        var totalPages = 30; // 总页数为 30（1990-2019）
+
+        // 创建并添加翻页内容到容器中
+        function createPageContent(pageNumber) {
+            var pageDiv = document.createElement("div");
+            pageDiv.id = "page" + pageNumber;
+            pageDiv.className = "page";
+            
+            var heading = document.createElement("h1");
+            heading.textContent = pageNumber;
+            pageDiv.appendChild(heading);
+            
+            var paragraph = document.createElement("p");
+            paragraph.textContent = "这是 " + pageNumber + " 年的内容。";
+            pageDiv.appendChild(paragraph);
+            
+            var link = document.createElement("a");
+            link.href = "javascript:void(0)";
+            link.textContent = "点击此处查看更多详情";
+            link.onclick = function() {
+                loadPageContent(pageNumber);
+            };
+            paragraph.appendChild(link);
+            
+            var prevButton = document.createElement("button");
+            prevButton.textContent = "上一页";
+            prevButton.onclick = function() {
+                goToPage(pageNumber - 1);
+            };
+            pageDiv.appendChild(prevButton);
+            
+            var nextButton = document.createElement("button");
+            nextButton.textContent = "下一页";
+            nextButton.onclick = function() {
+                goToPage(pageNumber + 1);
+            };
+            pageDiv.appendChild(nextButton);
+            
+            return pageDiv;
+        }
+
+        // 切换页面
+        function goToPage(pageNumber) {
+            // 隐藏当前页
+            document.getElementById("page" + currentPage).classList.remove("active");
+            // 显示目标页
+            document.getElementById("page" + pageNumber).classList.add("active");
+            // 更新当前页
+            currentPage = pageNumber;
+            
+            // 修改浏览器的历史记录，保持 URL 不变
+            var stateObj = { page: pageNumber };
+            var pageTitle = "Page " + pageNumber;
+            var url = "?page=" + pageNumber;
+            history.pushState(stateObj, pageTitle, url);
+        }
+
+        // 监听浏览器的前进和后退按钮事件
+        window.onpopstate = function(event) {
+            if (event.state && event.state.page) {
+                goToPage(event.state.page);
+            }
+        };
+
+        // 在容器中创建所有页面内容
+        var container = document.getElementById("container");
+        for (var i = 1990; i <= 2019; i++) {
+            var pageContent = createPageContent(i);
+            container.appendChild(pageContent);
+        }
+
+        // 默认显示第一页
+        document.getElementById("page1990").classList.add("active");
+
+        // 加载目标页面的内容
+        function loadPageContent(pageNumber) {
+            var url = "./" + pageNumber+ ".html";
+
+            // 发起 AJAX 请求获取目标页面内容
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // 获取到目标页面的内容
+                    var response = xhr.responseText;
+                    
+                    // 创建一个容器用于内嵌展示内容
+                    var pageContainer = document.createElement("div");
+                    pageContainer.innerHTML = response;
+
+                    // 清空当前页面的容器并添加内嵌展示的内容
+                    container.innerHTML = "";
+                    container.appendChild(pageContainer);
+                }
+            };
+            xhr.open("GET", url, true);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

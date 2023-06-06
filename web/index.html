@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .background {
+            background-image: url("./bk2.jpg");
+            background-repeat: repeat-y; /* 图像在纵向上重复 */
+            background-position: center center; /* 图像在元素中居中对齐 */
+            }
+        .content {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .slider-container {
+            margin-top: 10px;
+        }
+        .slider {
+            width: 80%;  /* Adjust the width of the slider */
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">全球人口死亡原因统计</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./children copy.html">Features</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="header" >全球死亡原因年度统计</div>
+    <div class="container">
+        <!-- Slider and Iframe Group 1 -->
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 癌症</p>
+                <p>探索全球癌症流行情况，了解不同类型癌症的影响和防治措施。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe1"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider1">
+                    <p id="pageNumber1" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider and Iframe Group 2 -->
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 痴呆</p>
+                <p>了解全球痴呆症的情况，包括人口受影响的规模、病因和影响，以及痴呆症在全球健康问题中的重要性。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe2"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider2">
+                    <p id="pageNumber2" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more groups if you need -->
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 道路事故</p>
+                <p>深入研究全球道路交通事故的数据和趋势，了解事故的原因、伤亡人数以及各地区的交通安全情况。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe3"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider3">
+                    <p id="pageNumber3" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 腹泻</p>
+                <p>揭示全球腹泻疾病的影响和严重性，包括儿童腹泻和水源污染等问题。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe4"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider4">
+                    <p id="pageNumber4" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 艾滋病</p>
+                <p>了解全球艾滋病的流行情况，包括感染人数、预防措施和医疗进展。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe5"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider5">
+                    <p id="pageNumber5" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 火灾</p>
+                <p>研究全球火灾造成的伤亡和财产损失，探索火灾防范和救援措施的重要性。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe6"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider6">
+                    <p id="pageNumber6" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 结核病</p>
+                <p>介绍全球结核病的流行情况、预防措施和治疗进展，以及结核病在全球健康领域中的地位。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe7"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider7">
+                    <p id="pageNumber7" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 恐怖主义</p>
+                <p>了解全球恐怖主义活动的影响，包括人员伤亡、心理影响和反恐措施。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe8"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider8">
+                    <p id="pageNumber8" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 溺水</p>
+                <p>揭示全球溺水事故的情况，包括儿童和成人的溺水统计数据和预防措施。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe9"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider9">
+                    <p id="pageNumber9" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 疟疾</p>
+                <p>探索全球疟疾的流行情况、防治措施和疫苗研发进展。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe10"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider10">
+                    <p id="pageNumber10" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 心血管疾病</p>
+                <p>了解全球心血管疾病的危害和防治措施，包括心脏病和中风等相关数据。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe11"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider11">
+                    <p id="pageNumber11" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 凶杀</p>
+                <p>研究全球凶杀案件的数据和趋势，了解暴力犯罪对社会和公共安全的影响。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe12"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider12">
+                    <p id="pageNumber12" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 吸烟</p>
+                <p>揭示吸烟对健康的危害，包括相关疾病、吸烟人口比例和吸烟控制的重要性。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe13"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider13">
+                    <p id="pageNumber13" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 营养不良</p>
+                <p>探索全球营养不良问题的严重性和影响，尤其关注儿童健康和饥饿问题。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe14"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider14">
+                    <p id="pageNumber14" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 自杀</p>
+                <p>了解全球自杀问题的规模和影响，探索预防措施和心理健康支持的重要性。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe15"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider15">
+                    <p id="pageNumber15" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="font-weight-bold"><i class="fas fa-book"></i> 自然灾害</p>
+                <p>研究全球各种自然灾害的影响，包括地震、飓风、洪水等，并探索灾害管理和应急响应措施。</p>
+            </div>
+            <div class="col-sm-10 content">
+                <iframe id="iframe16"></iframe>
+                <div class="slider-container">
+                    <input type="range" min="1" max="30" value="1" class="slider" id="pageSlider16">
+                    <p id="pageNumber16" class="text-muted">Page 1990</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var pages1 = [
+            './aizheng/map1990.html',
+            './aizheng/map1991.html',
+            './aizheng/map1992.html',
+            './aizheng/map1993.html',
+            './aizheng/map1994.html',
+            './aizheng/map1995.html',
+            './aizheng/map1996.html',
+            './aizheng/map1997.html',
+            './aizheng/map1998.html',
+            './aizheng/map1999.html',
+            './aizheng/map2000.html',
+            './aizheng/map2001.html',
+            './aizheng/map2002.html',
+            './aizheng/map2003.html',
+            './aizheng/map2004.html',
+            './aizheng/map2005.html',
+            './aizheng/map2006.html',
+            './aizheng/map2007.html',
+            './aizheng/map2008.html',
+            './aizheng/map2009.html',
+            './aizheng/map2010.html',
+            './aizheng/map2011.html',
+            './aizheng/map2012.html',
+            './aizheng/map2013.html',
+            './aizheng/map2014.html',
+            './aizheng/map2015.html',
+            './aizheng/map2016.html',
+            './aizheng/map2017.html',
+            './aizheng/map2018.html',
+            './aizheng/map2019.html'
+                // Add more URLs for the first group if you need
+            ];
+            $('#iframe1').attr('src', pages1[0]);
+            $('#pageSlider1').on('input change', function() {
+                $('#iframe1').attr('src', pages1[this.value - 1]);
+                $('#pageNumber1').text('Page ' + this.value);
+            });
+
+            var pages2 = [
+            './chidai/chidai1990.html',
+            './chidai/chidai1991.html',
+            './chidai/chidai1992.html',
+            './chidai/chidai1993.html',
+            './chidai/chidai1994.html',
+            './chidai/chidai1995.html',
+            './chidai/chidai1996.html',
+            './chidai/chidai1997.html',
+            './chidai/chidai1998.html',
+            './chidai/chidai1999.html',
+            './chidai/chidai2000.html',
+            './chidai/chidai2001.html',
+            './chidai/chidai2002.html',
+            './chidai/chidai2003.html',
+            './chidai/chidai2004.html',
+            './chidai/chidai2005.html',
+            './chidai/chidai2006.html',
+            './chidai/chidai2007.html',
+            './chidai/chidai2008.html',
+            './chidai/chidai2009.html',
+            './chidai/chidai2010.html',
+            './chidai/chidai2011.html',
+            './chidai/chidai2012.html',
+            './chidai/chidai2013.html',
+            './chidai/chidai2014.html',
+            './chidai/chidai2015.html',
+            './chidai/chidai2016.html',
+            './chidai/chidai2017.html',
+            './chidai/chidai2018.html',
+            './chidai/chidai2019.html'
+
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe2').attr('src', pages2[0]);
+            $('#pageSlider2').on('input change', function() {
+                $('#iframe2').attr('src', pages2[this.value - 1]);
+                $('#pageNumber2').text('Page ' + this.value);
+            });
+
+            var pages3 = [
+            './dlsg/dlsg1990.html',
+            './dlsg/dlsg1991.html',
+            './dlsg/dlsg1992.html',
+            './dlsg/dlsg1993.html',
+            './dlsg/dlsg1994.html',
+            './dlsg/dlsg1995.html',
+            './dlsg/dlsg1996.html',
+            './dlsg/dlsg1997.html',
+            './dlsg/dlsg1998.html',
+            './dlsg/dlsg1999.html',
+            './dlsg/dlsg2000.html',
+            './dlsg/dlsg2001.html',
+            './dlsg/dlsg2002.html',
+            './dlsg/dlsg2003.html',
+            './dlsg/dlsg2004.html',
+            './dlsg/dlsg2005.html',
+            './dlsg/dlsg2006.html',
+            './dlsg/dlsg2007.html',
+            './dlsg/dlsg2008.html',
+            './dlsg/dlsg2009.html',
+            './dlsg/dlsg2010.html',
+            './dlsg/dlsg2011.html',
+            './dlsg/dlsg2012.html',
+            './dlsg/dlsg2013.html',
+            './dlsg/dlsg2014.html',
+            './dlsg/dlsg2015.html',
+            './dlsg/dlsg2016.html',
+            './dlsg/dlsg2017.html',
+            './dlsg/dlsg2018.html',
+            './dlsg/dlsg2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe3').attr('src', pages3[0]);
+            $('#pageSlider3').on('input change', function() {
+                $('#iframe3').attr('src', pages3[this.value - 1]);
+                $('#pageNumber3').text('Page ' + this.value);
+            });
+
+
+            var pages4 = [
+            './fuxie/fx1990.html',
+            './fuxie/fx1991.html',
+            './fuxie/fx1992.html',
+            './fuxie/fx1993.html',
+            './fuxie/fx1994.html',
+            './fuxie/fx1995.html',
+            './fuxie/fx1996.html',
+            './fuxie/fx1997.html',
+            './fuxie/fx1998.html',
+            './fuxie/fx1999.html',
+            './fuxie/fx2000.html',
+            './fuxie/fx2001.html',
+            './fuxie/fx2002.html',
+            './fuxie/fx2003.html',
+            './fuxie/fx2004.html',
+            './fuxie/fx2005.html',
+            './fuxie/fx2006.html',
+            './fuxie/fx2007.html',
+            './fuxie/fx2008.html',
+            './fuxie/fx2009.html',
+            './fuxie/fx2010.html',
+            './fuxie/fx2011.html',
+            './fuxie/fx2012.html',
+            './fuxie/fx2013.html',
+            './fuxie/fx2014.html',
+            './fuxie/fx2015.html',
+            './fuxie/fx2016.html',
+            './fuxie/fx2017.html',
+            './fuxie/fx2018.html',
+            './fuxie/fx2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe4').attr('src', pages4[0]);
+            $('#pageSlider4').on('input change', function() {
+                $('#iframe4').attr('src', pages4[this.value - 1]);
+                $('#pageNumber4').text('Page ' + this.value);
+            });
+            // Add more JavaScript code if you have more groups
+
+            var pages5 = [
+            './hiv/hiv1990.html',
+            './hiv/hiv1991.html',
+            './hiv/hiv1992.html',
+            './hiv/hiv1993.html',
+            './hiv/hiv1994.html',
+            './hiv/hiv1995.html',
+            './hiv/hiv1996.html',
+            './hiv/hiv1997.html',
+            './hiv/hiv1998.html',
+            './hiv/hiv1999.html',
+            './hiv/hiv2000.html',
+            './hiv/hiv2001.html',
+            './hiv/hiv2002.html',
+            './hiv/hiv2003.html',
+            './hiv/hiv2004.html',
+            './hiv/hiv2005.html',
+            './hiv/hiv2006.html',
+            './hiv/hiv2007.html',
+            './hiv/hiv2008.html',
+            './hiv/hiv2009.html',
+            './hiv/hiv2010.html',
+            './hiv/hiv2011.html',
+            './hiv/hiv2012.html',
+            './hiv/hiv2013.html',
+            './hiv/hiv2014.html',
+            './hiv/hiv2015.html',
+            './hiv/hiv2016.html',
+            './hiv/hiv2017.html',
+            './hiv/hiv2018.html',
+            './hiv/hiv2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe5').attr('src', pages5[0]);
+            $('#pageSlider5').on('input change', function() {
+                $('#iframe5').attr('src', pages5[this.value - 1]);
+                $('#pageNumber5').text('Page ' + this.value);
+            });
+
+            var pages6 = [
+            './huozhai/hz1990.html',
+            './huozhai/hz1991.html',
+            './huozhai/hz1992.html',
+            './huozhai/hz1993.html',
+            './huozhai/hz1994.html',
+            './huozhai/hz1995.html',
+            './huozhai/hz1996.html',
+            './huozhai/hz1997.html',
+            './huozhai/hz1998.html',
+            './huozhai/hz1999.html',
+            './huozhai/hz2000.html',
+            './huozhai/hz2001.html',
+            './huozhai/hz2002.html',
+            './huozhai/hz2003.html',
+            './huozhai/hz2004.html',
+            './huozhai/hz2005.html',
+            './huozhai/hz2006.html',
+            './huozhai/hz2007.html',
+            './huozhai/hz2008.html',
+            './huozhai/hz2009.html',
+            './huozhai/hz2010.html',
+            './huozhai/hz2011.html',
+            './huozhai/hz2012.html',
+            './huozhai/hz2013.html',
+            './huozhai/hz2014.html',
+            './huozhai/hz2015.html',
+            './huozhai/hz2016.html',
+            './huozhai/hz2017.html',
+            './huozhai/hz2018.html',
+            './huozhai/hz2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe6').attr('src', pages6[0]);
+            $('#pageSlider6').on('input change', function() {
+                $('#iframe6').attr('src', pages6[this.value - 1]);
+                $('#pageNumber6').text('Page ' + this.value);
+            });
+
+            var pages7 = [
+            './jiehe/jh1990.html',
+            './jiehe/jh1991.html',
+            './jiehe/jh1992.html',
+            './jiehe/jh1993.html',
+            './jiehe/jh1994.html',
+            './jiehe/jh1995.html',
+            './jiehe/jh1996.html',
+            './jiehe/jh1997.html',
+            './jiehe/jh1998.html',
+            './jiehe/jh1999.html',
+            './jiehe/jh2000.html',
+            './jiehe/jh2001.html',
+            './jiehe/jh2002.html',
+            './jiehe/jh2003.html',
+            './jiehe/jh2004.html',
+            './jiehe/jh2005.html',
+            './jiehe/jh2006.html',
+            './jiehe/jh2007.html',
+            './jiehe/jh2008.html',
+            './jiehe/jh2009.html',
+            './jiehe/jh2010.html',
+            './jiehe/jh2011.html',
+            './jiehe/jh2012.html',
+            './jiehe/jh2013.html',
+            './jiehe/jh2014.html',
+            './jiehe/jh2015.html',
+            './jiehe/jh2016.html',
+            './jiehe/jh2017.html',
+            './jiehe/jh2018.html',
+            './jiehe/jh2019.html'
+
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe7').attr('src', pages7[0]);
+            $('#pageSlider7').on('input change', function() {
+                $('#iframe7').attr('src', pages7[this.value - 1]);
+                $('#pageNumber7').text('Page ' + this.value);
+            });
+
+            var pages8 = [
+            './kbzy/kbzy1990.html',
+            './kbzy/kbzy1991.html',
+            './kbzy/kbzy1992.html',
+            './kbzy/kbzy1993.html',
+            './kbzy/kbzy1994.html',
+            './kbzy/kbzy1995.html',
+            './kbzy/kbzy1996.html',
+            './kbzy/kbzy1997.html',
+            './kbzy/kbzy1998.html',
+            './kbzy/kbzy1999.html',
+            './kbzy/kbzy2000.html',
+            './kbzy/kbzy2001.html',
+            './kbzy/kbzy2002.html',
+            './kbzy/kbzy2003.html',
+            './kbzy/kbzy2004.html',
+            './kbzy/kbzy2005.html',
+            './kbzy/kbzy2006.html',
+            './kbzy/kbzy2007.html',
+            './kbzy/kbzy2008.html',
+            './kbzy/kbzy2009.html',
+            './kbzy/kbzy2010.html',
+            './kbzy/kbzy2011.html',
+            './kbzy/kbzy2012.html',
+            './kbzy/kbzy2013.html',
+            './kbzy/kbzy2014.html',
+            './kbzy/kbzy2015.html',
+            './kbzy/kbzy2016.html',
+            './kbzy/kbzy2017.html',
+            './kbzy/kbzy2018.html',
+            './kbzy/kbzy2019.html'
+
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe8').attr('src', pages8[0]);
+            $('#pageSlider8').on('input change', function() {
+                $('#iframe8').attr('src', pages8[this.value - 1]);
+                $('#pageNumber8').text('Page ' + this.value);
+            });
+
+            var pages9 = [
+            './nishui/ns1990.html',
+            './nishui/ns1991.html',
+            './nishui/ns1992.html',
+            './nishui/ns1993.html',
+            './nishui/ns1994.html',
+            './nishui/ns1995.html',
+            './nishui/ns1996.html',
+            './nishui/ns1997.html',
+            './nishui/ns1998.html',
+            './nishui/ns1999.html',
+            './nishui/ns2000.html',
+            './nishui/ns2001.html',
+            './nishui/ns2002.html',
+            './nishui/ns2003.html',
+            './nishui/ns2004.html',
+            './nishui/ns2005.html',
+            './nishui/ns2006.html',
+            './nishui/ns2007.html',
+            './nishui/ns2008.html',
+            './nishui/ns2009.html',
+            './nishui/ns2010.html',
+            './nishui/ns2011.html',
+            './nishui/ns2012.html',
+            './nishui/ns2013.html',
+            './nishui/ns2014.html',
+            './nishui/ns2015.html',
+            './nishui/ns2016.html',
+            './nishui/ns2017.html',
+            './nishui/ns2018.html',
+            './nishui/ns2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe9').attr('src', pages9[0]);
+            $('#pageSlider9').on('input change', function() {
+                $('#iframe9').attr('src', pages9[this.value - 1]);
+                $('#pageNumber9').text('Page ' + this.value);
+            });
+
+            var pages10 = [
+            './nueji/nj1990.html',
+            './nueji/nj1991.html',
+            './nueji/nj1992.html',
+            './nueji/nj1993.html',
+            './nueji/nj1994.html',
+            './nueji/nj1995.html',
+            './nueji/nj1996.html',
+            './nueji/nj1997.html',
+            './nueji/nj1998.html',
+            './nueji/nj1999.html',
+            './nueji/nj2000.html',
+            './nueji/nj2001.html',
+            './nueji/nj2002.html',
+            './nueji/nj2003.html',
+            './nueji/nj2004.html',
+            './nueji/nj2005.html',
+            './nueji/nj2006.html',
+            './nueji/nj2007.html',
+            './nueji/nj2008.html',
+            './nueji/nj2009.html',
+            './nueji/nj2010.html',
+            './nueji/nj2011.html',
+            './nueji/nj2012.html',
+            './nueji/nj2013.html',
+            './nueji/nj2014.html',
+            './nueji/nj2015.html',
+            './nueji/nj2016.html',
+            './nueji/nj2017.html',
+            './nueji/nj2018.html',
+            './nueji/nj2019.html'
+
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe10').attr('src', pages10[0]);
+            $('#pageSlider10').on('input change', function() {
+                $('#iframe10').attr('src', pages10[this.value - 1]);
+                $('#pageNumber10').text('Page ' + this.value);
+            });
+
+
+            var pages11 = [
+            './xinxueguan/xxg1990.html',
+            './xinxueguan/xxg1991.html',
+            './xinxueguan/xxg1992.html',
+            './xinxueguan/xxg1993.html',
+            './xinxueguan/xxg1994.html',
+            './xinxueguan/xxg1995.html',
+            './xinxueguan/xxg1996.html',
+            './xinxueguan/xxg1997.html',
+            './xinxueguan/xxg1998.html',
+            './xinxueguan/xxg1999.html',
+            './xinxueguan/xxg2000.html',
+            './xinxueguan/xxg2001.html',
+            './xinxueguan/xxg2002.html',
+            './xinxueguan/xxg2003.html',
+            './xinxueguan/xxg2004.html',
+            './xinxueguan/xxg2005.html',
+            './xinxueguan/xxg2006.html',
+            './xinxueguan/xxg2007.html',
+            './xinxueguan/xxg2008.html',
+            './xinxueguan/xxg2009.html',
+            './xinxueguan/xxg2010.html',
+            './xinxueguan/xxg2011.html',
+            './xinxueguan/xxg2012.html',
+            './xinxueguan/xxg2013.html',
+            './xinxueguan/xxg2014.html',
+            './xinxueguan/xxg2015.html',
+            './xinxueguan/xxg2016.html',
+            './xinxueguan/xxg2017.html',
+            './xinxueguan/xxg2018.html',
+            './xinxueguan/xxg2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe11').attr('src', pages11[0]);
+            $('#pageSlider11').on('input change', function() {
+                $('#iframe11').attr('src', pages11[this.value - 1]);
+                $('#pageNumber11').text('Page ' + this.value);
+            });
+
+
+            var pages12 = [
+            './xiongsha/xs1990.html',
+            './xiongsha/xs1991.html',
+            './xiongsha/xs1992.html',
+            './xiongsha/xs1993.html',
+            './xiongsha/xs1994.html',
+            './xiongsha/xs1995.html',
+            './xiongsha/xs1996.html',
+            './xiongsha/xs1997.html',
+            './xiongsha/xs1998.html',
+            './xiongsha/xs1999.html',
+            './xiongsha/xs2000.html',
+            './xiongsha/xs2001.html',
+            './xiongsha/xs2002.html',
+            './xiongsha/xs2003.html',
+            './xiongsha/xs2004.html',
+            './xiongsha/xs2005.html',
+            './xiongsha/xs2006.html',
+            './xiongsha/xs2007.html',
+            './xiongsha/xs2008.html',
+            './xiongsha/xs2009.html',
+            './xiongsha/xs2010.html',
+            './xiongsha/xs2011.html',
+            './xiongsha/xs2012.html',
+            './xiongsha/xs2013.html',
+            './xiongsha/xs2014.html',
+            './xiongsha/xs2015.html',
+            './xiongsha/xs2016.html',
+            './xiongsha/xs2017.html',
+            './xiongsha/xs2018.html',
+            './xiongsha/xs2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe12').attr('src', pages12[0]);
+            $('#pageSlider12').on('input change', function() {
+                $('#iframe12').attr('src', pages12[this.value - 1]);
+                $('#pageNumber12').text('Page ' + this.value);
+            });
+
+            var pages13 = [
+            './xiyan/xy1990.html',
+            './xiyan/xy1991.html',
+            './xiyan/xy1992.html',
+            './xiyan/xy1993.html',
+            './xiyan/xy1994.html',
+            './xiyan/xy1995.html',
+            './xiyan/xy1996.html',
+            './xiyan/xy1997.html',
+            './xiyan/xy1998.html',
+            './xiyan/xy1999.html',
+            './xiyan/xy2000.html',
+            './xiyan/xy2001.html',
+            './xiyan/xy2002.html',
+            './xiyan/xy2003.html',
+            './xiyan/xy2004.html',
+            './xiyan/xy2005.html',
+            './xiyan/xy2006.html',
+            './xiyan/xy2007.html',
+            './xiyan/xy2008.html',
+            './xiyan/xy2009.html',
+            './xiyan/xy2010.html',
+            './xiyan/xy2011.html',
+            './xiyan/xy2012.html',
+            './xiyan/xy2013.html',
+            './xiyan/xy2014.html',
+            './xiyan/xy2015.html',
+            './xiyan/xy2016.html',
+            './xiyan/xy2017.html',
+            './xiyan/xy2018.html',
+            './xiyan/xy2019.html'
+
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe13').attr('src', pages13[0]);
+            $('#pageSlider13').on('input change', function() {
+                $('#iframe13').attr('src', pages13[this.value - 1]);
+                $('#pageNumber13').text('Page ' + this.value);
+            });
+
+            var pages14 = [
+            './yybl/yybl1990.html',
+            './yybl/yybl1991.html',
+            './yybl/yybl1992.html',
+            './yybl/yybl1993.html',
+            './yybl/yybl1994.html',
+            './yybl/yybl1995.html',
+            './yybl/yybl1996.html',
+            './yybl/yybl1997.html',
+            './yybl/yybl1998.html',
+            './yybl/yybl1999.html',
+            './yybl/yybl2000.html',
+            './yybl/yybl2001.html',
+            './yybl/yybl2002.html',
+            './yybl/yybl2003.html',
+            './yybl/yybl2004.html',
+            './yybl/yybl2005.html',
+            './yybl/yybl2006.html',
+            './yybl/yybl2007.html',
+            './yybl/yybl2008.html',
+            './yybl/yybl2009.html',
+            './yybl/yybl2010.html',
+            './yybl/yybl2011.html',
+            './yybl/yybl2012.html',
+            './yybl/yybl2013.html',
+            './yybl/yybl2014.html',
+            './yybl/yybl2015.html',
+            './yybl/yybl2016.html',
+            './yybl/yybl2017.html',
+            './yybl/yybl2018.html',
+            './yybl/yybl2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe14').attr('src', pages14[0]);
+            $('#pageSlider14').on('input change', function() {
+                $('#iframe14').attr('src', pages14[this.value - 1]);
+                $('#pageNumber14').text('Page ' + this.value);
+            });
+
+            var pages15 = [
+            './zisha/zs1990.html',
+            './zisha/zs1991.html',
+            './zisha/zs1992.html',
+            './zisha/zs1993.html',
+            './zisha/zs1994.html',
+            './zisha/zs1995.html',
+            './zisha/zs1996.html',
+            './zisha/zs1997.html',
+            './zisha/zs1998.html',
+            './zisha/zs1999.html',
+            './zisha/zs2000.html',
+            './zisha/zs2001.html',
+            './zisha/zs2002.html',
+            './zisha/zs2003.html',
+            './zisha/zs2004.html',
+            './zisha/zs2005.html',
+            './zisha/zs2006.html',
+            './zisha/zs2007.html',
+            './zisha/zs2008.html',
+            './zisha/zs2009.html',
+            './zisha/zs2010.html',
+            './zisha/zs2011.html',
+            './zisha/zs2012.html',
+            './zisha/zs2013.html',
+            './zisha/zs2014.html',
+            './zisha/zs2015.html',
+            './zisha/zs2016.html',
+            './zisha/zs2017.html',
+            './zisha/zs2018.html',
+            './zisha/zs2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe15').attr('src', pages15[0]);
+            $('#pageSlider15').on('input change', function() {
+                $('#iframe15').attr('src', pages15[this.value - 1]);
+                $('#pageNumber15').text('Page ' + this.value);
+            });
+
+            var pages16 = [
+            './zrzh/zrzh1990.html',
+            './zrzh/zrzh1991.html',
+            './zrzh/zrzh1992.html',
+            './zrzh/zrzh1993.html',
+            './zrzh/zrzh1994.html',
+            './zrzh/zrzh1995.html',
+            './zrzh/zrzh1996.html',
+            './zrzh/zrzh1997.html',
+            './zrzh/zrzh1998.html',
+            './zrzh/zrzh1999.html',
+            './zrzh/zrzh2000.html',
+            './zrzh/zrzh2001.html',
+            './zrzh/zrzh2002.html',
+            './zrzh/zrzh2003.html',
+            './zrzh/zrzh2004.html',
+            './zrzh/zrzh2005.html',
+            './zrzh/zrzh2006.html',
+            './zrzh/zrzh2007.html',
+            './zrzh/zrzh2008.html',
+            './zrzh/zrzh2009.html',
+            './zrzh/zrzh2010.html',
+            './zrzh/zrzh2011.html',
+            './zrzh/zrzh2012.html',
+            './zrzh/zrzh2013.html',
+            './zrzh/zrzh2014.html',
+            './zrzh/zrzh2015.html',
+            './zrzh/zrzh2016.html',
+            './zrzh/zrzh2017.html',
+            './zrzh/zrzh2018.html',
+            './zrzh/zrzh2019.html'
+                // Add more URLs for the second group if you need
+            ];
+            $('#iframe16').attr('src', pages16[0]);
+            $('#pageSlider16').on('input change', function() {
+                $('#iframe16').attr('src', pages15[this.value - 1]);
+                $('#pageNumber16').text('Page ' + this.value);
+            });
+
+
+        });
+    </script>
+</div>
+</body>
+</html>
