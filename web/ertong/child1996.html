@@ -5,13 +5,25 @@
     <title>ECharts</title>
     <!-- 引入 echarts.js -->
     <script src="../echarts.js"></script>
+    <link href="child.css" rel="stylesheet">
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="pie" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
+
+        var dataset = [];
+        var name_dataset = ['侵袭性非伤寒沙门氏菌', '人际暴力', '营养缺乏', '急性肝炎', '肿瘤', '麻疹', '消化系统疾病', '肝硬化和其他慢性肝病', '慢性肾病', '心血管疾病', '先天性出生缺陷', '下呼吸道感染', '新生儿早产', '环境冷热暴露', '新生儿败血症和其他新生儿感染', '暴露于自然力量', '糖尿病', '出生窒息和创伤引起的新生儿脑病', '脑膜炎', '其他新生儿疾病', '百日咳', '腹泻疾病', '火、热和热物质', '道路伤害', '结核', '艾滋病毒/艾滋病', '溺水', '疟疾', '梅毒'];
+        var value_dataset = ['35492', '19565', '433426', '41642', '73104', '620845', '62063', '13188', '15254', '60431', '735232', '1831241', '1141610', '4697', '267233', '1304', '3619', '799906', '261189', '515436', '188710', '1408752', '28435', '91529', '170591', '179857', '140296', '574217', '98830'];
+        
+        for(var i = 0; i < name_dataset.length; i ++)
+        {
+            var temp_data =  {name: name_dataset[i], value: value_dataset[i]};
+            dataset.push(temp_data);
+        }
 
         // 指定图表的配置项和数据
         var option = {
@@ -23,18 +35,57 @@
                 data:['死亡原因']
             },
             xAxis: {
-                data:['侵袭性非伤寒沙门氏菌', '人际暴力', '营养缺乏', '急性肝炎', '肿瘤', '麻疹', '消化系统疾病', '肝硬化和其他慢性肝病', '慢性肾病', '心血管疾病', '先天性出生缺陷', '下呼吸道感染', '新生儿早产', '环境冷热暴露', '新生儿败血症和其他新生儿感染', '暴露于自然力量', '糖尿病', '出生窒息和创伤引起的新生儿脑病', '脑膜炎', '其他新生儿疾病', '百日咳', '腹泻疾病', '火、热和热物质', '道路伤害', '结核', '艾滋病毒/艾滋病', '溺水', '疟疾', '梅毒']
+                data: name_dataset,
+                show: false,
             },
             yAxis: {},
             series: [{
-                name: '死亡总数（全球）',
+                name: '死亡总数（全球1996）',
                 type: 'bar',
-                data:['35492', '19565', '433426', '41642', '73104', '620845', '62063', '13188', '15254', '60431', '735232', '1831241', '1141610', '4697', '267233', '1304', '3619', '799906', '261189', '515436', '188710', '1408752', '28435', '91529', '170591', '179857', '140296', '574217', '98830']
+                data: value_dataset,
+                itemStyle: {
+                    normal: {
+                        color: function(params){
+                            return 'red'
+                        }
+                    }
+                },
             }]
         };
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+
+        var myChart2 = echarts.init(document.getElementById('pie'));
+
+        var option2 = {
+            tooltip: {
+                formatter: function(params){
+                    return params.percent + '%'
+                }
+            },
+            series: [
+                {
+                    type: 'pie',
+                    data: dataset,
+                    label: {
+                        show: true, // 显示文字
+                        formatter: function(arg){
+                            //console.log(arg)
+                            return arg.data.name
+                        }
+                        // 设置显示文字内容
+                    }
+                }
+            ]
+        }
+
+        myChart2.setOption(option2);
+
+        window.addEventListener("resize", function(){
+            myChart.resize();
+            myChart2.resize();
+        })
     </script>
 </body>
 </html>

@@ -2,16 +2,25 @@
 <html style="height: 100%">
 <head>
     <meta charset="utf-8">
+    <link href="hengxiang.css" rel="stylesheet">
 </head>
 <body style="height: 100%; margin: 0">
-    <div id="container" style="height: 100%"></div>
+    <div id="container" style="width: 800px;height: 100%"></div>
+    <div id="pie" style="width: 600px;height: 100%"></div>
 
     <script src="../echarts.js"></script>
     <script type="text/javascript">
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
+        var dataset = [];
+        var name_dataset = ['基里巴斯', '所罗门群岛', '缅甸', '格陵兰', '尼泊尔', '老挝', '文莱', '匈牙利', '中国', '萨摩亚'];
+        var value_dataset = [407.6, 395.3, 336.3, 332.21, 260.01, 259.24, 249.59, 222.01, 221.04, 219.09];
+        for(var i = 0; i < name_dataset.length; i ++)
+        {
+            var temp_data =  {name: name_dataset[i], value: value_dataset[i]};
+            dataset.push(temp_data);
+        }
         var option;
-
         option = {
             tooltip: {
                 trigger: 'axis',
@@ -30,13 +39,22 @@
             },
             yAxis: {
                 type: 'category',
-                data: ['基里巴斯', '所罗门群岛', '缅甸', '格陵兰','老挝', '尼泊尔', '文莱', '柬埔寨', '爱尔兰', '萨摩亚']         
+                data: name_dataset   
             },
             series: [
                 {
                     name: '数量',
                     type: 'bar',
-                    data: [407.6, 395.3, 336.3, 332.21, 260.01, 259.24, 249.59, 222.01, 221.04, 219.09]
+                    data: value_dataset,
+                    itemStyle: {
+                        color: function(params) { 
+                            var colorList = ['#d9ed92', '#b5e48c', '#99d98c', '#76c893', '#52b69a', '#34a0a4', '#168aad', '#1a759f', '#1e6091',' #184e77']; 
+                            return colorList[params.dataIndex];
+                        }
+                    },
+                    label: {
+                        show: true
+                    }
                 }
             ]
         };
@@ -44,6 +62,31 @@
         if (option && typeof option === 'object') {
             myChart.setOption(option);
         }
+
+        var myChart2 = echarts.init(document.getElementById('pie'));
+
+        var option2 = {
+            series: [
+                {
+                    type: 'pie',
+                    data: dataset,
+                    roseType: 'radius',
+                    itemStyle: {
+                        color: function(params) { 
+                            var colorList = ['#d9ed92', '#b5e48c', '#99d98c', '#76c893', '#52b69a', '#34a0a4', '#168aad', '#1a759f', '#1e6091',' #184e77']; 
+                            return colorList[params.dataIndex];
+                        }
+                    },
+                    label: {
+                        formatter: function(params){
+                            return params.name + ':' + params.percent
+                        },
+                    }
+                }
+            ]
+        }
+
+        myChart2.setOption(option2);
     </script>
 </body>
 </html>
